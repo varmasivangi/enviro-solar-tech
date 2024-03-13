@@ -29,7 +29,7 @@
       <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="../solatec/assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px"
+            <img src="./assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px"
               alt="logo">
           </a>
           <button class="navbar-toggler" type="button">
@@ -110,7 +110,7 @@
        page title 
     =========================== -->
     <section class="page-title page-title-layout2 bg-overlay bg-overlay-2 bg-parallax">
-      <div class="bg-img"><img src="../solatec/assets/newimgs/Group209485.png" alt="background"></div>
+      <div class="bg-img"><img src="./assets/newimgs/Group209485.png" alt="background"></div>
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-9">
@@ -209,7 +209,7 @@
               <div class="col-sm-6">
                 <div class="gallery-item">
                   <a class="popup-gallery-item" href="assets/images/gallery/4.jpg">
-                    <img src="../solatec/assets/newimgs/Carparkingsolutions-1.png" alt="gallery img">
+                    <img src="./assets/newimgs/Carparkingsolutions-1.png" alt="gallery img">
                   </a>
                 </div><!-- /.gallery-item -->
               </div><!-- /.col-sm-6 -->
@@ -217,7 +217,7 @@
               <div class="col-sm-6">
                 <div class="gallery-item">
                   <a class="popup-gallery-item" href="assets/images/gallery/5.jpg">
-                    <img src="../solatec/assets/newimgs/Carparking solutions-2.png" alt="gallery img">
+                    <img src="./assets/newimgs/Carparking solutions-2.png" alt="gallery img">
                   </a>
                 </div><!-- /.gallery-item -->
               </div><!-- /.col-sm-6 -->
@@ -356,7 +356,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-biosphere2"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 1@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 1@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Innovative Integration</h4>
@@ -368,7 +368,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-tube"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 2@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 2@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Customizable Sustainability</h4>
@@ -380,7 +380,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-electric-charge"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 3@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 3@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Reliability Redefined</h4>
@@ -391,7 +391,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-electric-charge"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 4@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 4@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Green Excellence</h4>
@@ -486,11 +486,11 @@
                       headers: {
                         'Content-Type': 'application/json',
                       },
-                      body: JSON.stringify(ContentModel),
+                      body: '',
                     };
-
+                    const queryString = new URLSearchParams(ContentModel).toString();
                     // Make the POST request using fetch
-                    fetch(apiUrl, options)
+                    fetch(`${apiUrl}?${queryString}`, options)
                       .then(response => {
                         if (!response.ok) {
                           throw new Error(`HTTP error! Status: ${response.status}`);

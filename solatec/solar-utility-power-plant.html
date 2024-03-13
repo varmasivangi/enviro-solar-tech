@@ -29,7 +29,7 @@
       <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="../solatec/assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px"
+            <img src="./assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px"
               alt="logo">
           </a>
           <button class="navbar-toggler" type="button">
@@ -219,16 +219,16 @@
               <!-- gallery item #1 -->
               <div class="col-sm-6">
                 <div class="gallery-item">
-                  <a class="popup-gallery-item" href="../solatec/assets/newimgs/Solarutilitypowerplants-1.png">
-                    <img src="../solatec/assets/newimgs/Solarutilitypowerplants-1.png" alt="gallery img">
+                  <a class="popup-gallery-item" href="./assets/newimgs/Solarutilitypowerplants-1.png">
+                    <img src="./assets/newimgs/Solarutilitypowerplants-1.png" alt="gallery img">
                   </a>
                 </div><!-- /.gallery-item -->
               </div>
               <!-- gallery item #2 -->
               <div class="col-sm-6">
                 <div class="gallery-item">
-                  <a class="popup-gallery-item" href="../solatec/assets/newimgs/Solarutilitypowerplants-2.png">
-                    <img src="../solatec/assets/newimgs/Solarutilitypowerplants-2.png" alt="gallery img">
+                  <a class="popup-gallery-item" href="./assets/newimgs/Solarutilitypowerplants-2.png">
+                    <img src="./assets/newimgs/Solarutilitypowerplants-2.png" alt="gallery img">
                   </a>
                 </div><!-- /.gallery-item -->
               </div>
@@ -376,7 +376,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-biosphere2"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 1@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 1@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Innovative Integration</h4>
@@ -400,7 +400,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-electric-charge"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 3@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 3@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Reliability Redefined</h4>
@@ -411,7 +411,7 @@
                   <div class="fancybox-item">
                     <div class="fancybox__icon">
                       <!-- <i class="icon-electric-charge"></i> -->
-                      <img height="70px" width="70px" style="margin: auto;" src="../solatec/assets/newimgs/Asset 4@400.png"/>
+                      <img height="70px" width="70px" style="margin: auto;" src="./assets/newimgs/Asset 4@400.png"/>
                     </div><!-- /.fancybox-icon -->
                     <div class="fancybox__content">
                       <h4 class="fancybox__title mb-0">Green Excellence</h4>
@@ -494,7 +494,6 @@
                       description: ""
                     };
 
-
                     console.log(ContentModel)
                     // URL of the API endpoint
                     const apiUrl = 'https://static.promena.in/SendMail';
@@ -505,11 +504,11 @@
                       headers: {
                         'Content-Type': 'application/json',
                       },
-                      body: JSON.stringify(ContentModel),
+                      body: '',
                     };
-
+                    const queryString = new URLSearchParams(ContentModel).toString();
                     // Make the POST request using fetch
-                    fetch(apiUrl, options)
+                    fetch(`${apiUrl}?${queryString}`, options)
                       .then(response => {
                         if (!response.ok) {
                           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -528,6 +527,7 @@
                         // Optionally, update the UI to indicate failure
                         document.querySelector('.contact-result').innerHTML = 'Error submitting the request.';
                       });
+
 
                   }
 
