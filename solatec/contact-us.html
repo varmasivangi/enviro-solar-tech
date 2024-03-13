@@ -6,13 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="Evniro Solar Energy Solutions">
-  <link href="./assets/images/logo_png_solar2.png"  rel="icon">
+  <link href="./assets/images/logo_png_solar2.png" rel="icon">
   <title>Evniro Solar Energy Solutions</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Rubik:400,500,600,700%7cRoboto:400,500,700&display=swap">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
   <link rel="stylesheet" href="assets/css/libraries.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .form-control {
+      height: 50px;
+      font-size: 14px;
+      padding: 0 0 0 20px;
+      border-radius: 5px;
+      border: 1px solid #bcbbbb !important;
+      background-color: transparent;
+
+    }
+  </style>
 </head>
 
 <body>
@@ -29,8 +40,7 @@
       <nav class="navbar navbar-expand-lg sticky-navbar">
         <div class="container">
           <a class="navbar-brand" href="index.html">
-            <img src="./assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px"
-              alt="logo">
+            <img src="./assets/newimgs/ENVIRO SOLAR SYSTEMS LOGO (1).png" class="logo" width="150px" alt="logo">
           </a>
           <button class="navbar-toggler" type="button">
             <span class="menu-lines"><span></span></span>
@@ -205,21 +215,21 @@
                 function submitForm(event) {
                   event.preventDefault(); // Prevent the default form submission behavior
                   validation = /^[6-9]\d{9}$/
-              
 
-                    // Get form values
-                    const name = document.getElementById('name').value;
+
+                  // Get form values
+                  const name = document.getElementById('name').value;
                   const email = document.getElementById('email').value;
                   const phoneNumber = document.getElementById('phoneNumber').value;
                   const selectedService = document.getElementById('selected-service').value;
                   const additionalDetails = document.getElementById('contact-messgae').value;
 
-                  if (!phoneNumber.match(validation)){
+                  if (!phoneNumber.match(validation)) {
 
                     alert('Please enter a valid Indian mobile number.')
-                    
+
                   }
-                  else{
+                  else {
                     const ContentModel = {
                       email: email,
                       name: name,
@@ -267,7 +277,7 @@
 
                   }
 
-                               }
+                }
               </script>
 
             </div><!-- /.contact__panel -->
