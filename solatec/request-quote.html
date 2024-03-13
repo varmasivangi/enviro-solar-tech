@@ -284,8 +284,6 @@
                       address: address,
                       description: ""
                     };
-
-
                     console.log(ContentModel)
                     // URL of the API endpoint
                     const apiUrl = 'https://static.promena.in/SendMail';
@@ -296,11 +294,11 @@
                       headers: {
                         'Content-Type': 'application/json',
                       },
-                      body: JSON.stringify(ContentModel),
+                      body: '',
                     };
-
+                    const queryString = new URLSearchParams(ContentModel).toString();
                     // Make the POST request using fetch
-                    fetch(apiUrl, options)
+                    fetch(`${apiUrl}?${queryString}`, options)
                       .then(response => {
                         if (!response.ok) {
                           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -319,6 +317,7 @@
                         // Optionally, update the UI to indicate failure
                         document.querySelector('.contact-result').innerHTML = 'Error submitting the request.';
                       });
+
 
                   }
 
